@@ -1,14 +1,14 @@
+import brFlag from '@/assets/flags/rounded/br.svg';
+import enFlag from '@/assets/flags/rounded/en.svg';
+import esFlag from '@/assets/flags/rounded/es.svg';
+import ruFlag from '@/assets/flags/rounded/ru.svg';
+import uaFlag from '@/assets/flags/rounded/ua.svg';
 import { IView } from '@/components/iview';
 import { closestAncestor, data, qs, selector } from '@/lib/dom';
 import { TranslationService } from '@/services/translation-service';
 import { store } from '@/store';
 import { changeLocale } from '@/store/actions/localeActions';
 import { Locale } from '@/types';
-import brFlag from '../assets/flags/rounded/br.svg';
-import enFlag from '../assets/flags/rounded/en.svg';
-import esFlag from '../assets/flags/rounded/es.svg';
-import ruFlag from '../assets/flags/rounded/ru.svg';
-import uaFlag from '../assets/flags/rounded/ua.svg';
 
 export interface LocaleDescriptor {
 	title: string;
