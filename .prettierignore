@@ -1,0 +1,13 @@
+node_modules
+.changeset
+.astro
+.vscode
+
+package-lock.json
+pnpm-lock.yaml
+
+dist
+build
+coverage
+playwright
+cypress
