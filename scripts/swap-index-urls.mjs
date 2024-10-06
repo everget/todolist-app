@@ -51,16 +51,20 @@ function changeToProd(htmlContent, assetPaths) {
 		);
 	}
 
-	return htmlContent
-		.replace(/\/src\/assets\/vite\.svg/g, `dist/assets/${assetPaths.favicon}`)
-		.replace(/\/src\/main\.ts/g, `dist/assets/${assetPaths.js}`);
+	return (
+		htmlContent
+			// .replace(/\/src\/assets\/vite\.svg/g, `dist/assets/${assetPaths.favicon}`)
+			.replace(/\/src\/main\.ts/g, `dist/assets/${assetPaths.js}`)
+	);
 }
 
 function changeToDev(htmlContent) {
-	return htmlContent
-		.replace(/dist\/assets\/vite(?:-[\w\d]+)?\.svg/g, '/src/assets/vite.svg')
-		.replace(/dist\/assets\/[\w\d-]+\.js/g, '/src/main.ts')
-		.replace(distCssPattern, '');
+	return (
+		htmlContent
+			// .replace(/dist\/assets\/vite(?:-[\w\d]+)?\.svg/g, '/src/assets/vite.svg')
+			.replace(/dist\/assets\/[\w\d-]+\.js/g, '/src/main.ts')
+			.replace(distCssPattern, '')
+	);
 }
 
 function updateIndexHtml(htmlContent, assetFiles) {
