@@ -52,7 +52,7 @@ function changeToProd(htmlContent, assetPaths) {
 	}
 
 	return htmlContent
-		.replace(/\/src\/assets\/vite\.svg/g, 'dist/assets/vite.svg')
+		.replace(/\/src\/assets\/vite\.svg/g, `dist/assets/${assetPaths.favicon}`)
 		.replace(/\/src\/main\.ts/g, `dist/assets/${assetPaths.js}`);
 }
 

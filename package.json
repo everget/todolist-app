@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "tsc && vite build && pnpm run swap-prod",
+    "build": "pnpm run swap-dev && tsc && vite build && pnpm run swap-prod",
     "coverage": "vitest run --coverage",
     "dev": "pnpm run swap-dev && vite",
     "e2e-cy": "pnpm cypress run --browser electron",
