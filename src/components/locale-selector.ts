@@ -1,8 +1,3 @@
-import brFlag from '@/assets/flags/rounded/br.svg';
-import enFlag from '@/assets/flags/rounded/en.svg';
-import esFlag from '@/assets/flags/rounded/es.svg';
-import ruFlag from '@/assets/flags/rounded/ru.svg';
-import uaFlag from '@/assets/flags/rounded/ua.svg';
 import { IView } from '@/components/iview';
 import { closestAncestor, data, qs, selector } from '@/lib/dom';
 import { TranslationService } from '@/services/translation-service';
@@ -21,31 +16,31 @@ export const LOCALES: Record<Locale, LocaleDescriptor> = {
 	en: {
 		title: 'English',
 		code: 'en',
-		flagSrc: enFlag,
+		flagSrc: 'public/en.svg',
 		flagAlt: TranslationService.t('flags.en'),
 	},
 	'pt-br': {
 		title: 'Português',
 		code: 'pt-br',
-		flagSrc: brFlag,
+		flagSrc: 'public/br.svg',
 		flagAlt: TranslationService.t('flags.br'),
 	},
 	es: {
 		title: 'Español',
 		code: 'es',
-		flagSrc: esFlag,
+		flagSrc: 'public/es.svg',
 		flagAlt: TranslationService.t('flags.es'),
 	},
 	ua: {
 		title: 'Українська',
 		code: 'ua',
-		flagSrc: uaFlag,
+		flagSrc: 'public/ua.svg',
 		flagAlt: TranslationService.t('flags.ua'),
 	},
 	ru: {
 		title: 'Русский',
 		code: 'ru',
-		flagSrc: ruFlag,
+		flagSrc: 'public/ru.svg',
 		flagAlt: TranslationService.t('flags.ru'),
 	},
 };
