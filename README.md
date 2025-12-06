@@ -1,4 +1,4 @@
-# todolist-app
+# Todo List App
 
 My old Vanilla Todolist app rewritten to the modern Web tech stack
 
