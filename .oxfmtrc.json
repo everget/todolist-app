@@ -1,0 +1,24 @@
+{
+    "$schema": "./node_modules/oxfmt/configuration_schema.json",
+    "tabWidth": 4,
+    "useTabs": false,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "printWidth": 100,
+    "sortTailwindcss": {},
+    "sortPackageJson": false,
+    "ignorePatterns": [
+        "pnpm-lock.yaml",
+        ".claude/**",
+        "_dev/**",
+        "node_modules/**",
+        "dist/**",
+        "build/**/*",
+        "coverage/**",
+        "vendor/**",
+        "test/snapshots/**",
+        "tests/e2e/playwright/report/**",
+        "tests/e2e/playwright/test-results/**"
+    ]
+}

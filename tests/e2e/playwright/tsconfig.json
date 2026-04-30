@@ -1,8 +1,14 @@
 {
-  "compilerOptions": {
-    "target": "es5",
-    "lib": ["es5", "dom"],
-    "types": ["node"]
-  },
-  "include": ["**/*.ts"]
+    "compilerOptions": {
+        "target": "ESNext",
+        "lib": ["ESNext", "DOM"],
+        "module": "ESNext",
+        "moduleResolution": "node",
+        "types": ["node"],
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["../../../src/*"]
+        }
+    },
+    "include": ["**/*.ts"]
 }

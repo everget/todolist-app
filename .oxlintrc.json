@@ -1,0 +1,24 @@
+{
+    "$schema": "./node_modules/oxlint/configuration_schema.json",
+    "plugins": ["typescript", "unicorn", "oxc"],
+    "categories": {
+        "correctness": "error"
+    },
+    "rules": {},
+    "env": {
+        "builtin": true
+    },
+    "ignorePatterns": [
+        "pnpm-lock.yaml",
+        ".claude/**",
+        "_dev/**",
+        "node_modules/**",
+        "dist/**",
+        "build/**/*",
+        "coverage/**",
+        "vendor/**",
+        "test/snapshots/**",
+        "tests/e2e/playwright/report/**",
+        "tests/e2e/playwright/test-results/**"
+    ]
+}

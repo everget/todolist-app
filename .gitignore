@@ -1,5 +1,11 @@
-_dev
 coverage
+
+# Local dev notes (not part of the repo)
+_dev/
+
+
+# Claude Code & worktrees
+.claude/
 
 # Logs
 logs
@@ -28,3 +34,9 @@ dist-ssr
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+tests/e2e/playwright/test-results/
+tests/e2e/playwright/report/
+
+# ESLint cache
+.eslintcache
+
