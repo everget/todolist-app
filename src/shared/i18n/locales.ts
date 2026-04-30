@@ -26,12 +26,17 @@ export interface LocaleDescriptor {
     flagKey: 'flags.en' | 'flags.br' | 'flags.es' | 'flags.ua' | 'flags.ru';
 }
 
+// Vite dev server serves public/ at the root, so /en.svg resolves correctly.
+// When deployed directly from the repo root (e.g. GitHub Pages), public/ files
+// stay at their real path, so the prefix must be 'public/'.
+const flagBase = import.meta.env.DEV ? '/' : 'public/';
+
 export const LOCALES: Record<Locale, LocaleDescriptor> = {
-    en: { title: 'English', code: 'en', flagSrc: '/en.svg', flagKey: 'flags.en' },
-    'pt-br': { title: 'Português', code: 'pt-br', flagSrc: '/br.svg', flagKey: 'flags.br' },
-    es: { title: 'Español', code: 'es', flagSrc: '/es.svg', flagKey: 'flags.es' },
-    ua: { title: 'Українська', code: 'ua', flagSrc: '/ua.svg', flagKey: 'flags.ua' },
-    ru: { title: 'Русский', code: 'ru', flagSrc: '/ru.svg', flagKey: 'flags.ru' },
+    en: { title: 'English', code: 'en', flagSrc: `${flagBase}en.svg`, flagKey: 'flags.en' },
+    'pt-br': { title: 'Português', code: 'pt-br', flagSrc: `${flagBase}br.svg`, flagKey: 'flags.br' },
+    es: { title: 'Español', code: 'es', flagSrc: `${flagBase}es.svg`, flagKey: 'flags.es' },
+    ua: { title: 'Українська', code: 'ua', flagSrc: `${flagBase}ua.svg`, flagKey: 'flags.ua' },
+    ru: { title: 'Русский', code: 'ru', flagSrc: `${flagBase}ru.svg`, flagKey: 'flags.ru' },
 };
 
 export const SUPPORTED_LOCALES = Object.keys(LOCALES) as Locale[];
