@@ -33,7 +33,12 @@ const flagBase = import.meta.env.DEV ? '/' : 'public/';
 
 export const LOCALES: Record<Locale, LocaleDescriptor> = {
     en: { title: 'English', code: 'en', flagSrc: `${flagBase}en.svg`, flagKey: 'flags.en' },
-    'pt-br': { title: 'Português', code: 'pt-br', flagSrc: `${flagBase}br.svg`, flagKey: 'flags.br' },
+    'pt-br': {
+        title: 'Português',
+        code: 'pt-br',
+        flagSrc: `${flagBase}br.svg`,
+        flagKey: 'flags.br',
+    },
     es: { title: 'Español', code: 'es', flagSrc: `${flagBase}es.svg`, flagKey: 'flags.es' },
     ua: { title: 'Українська', code: 'ua', flagSrc: `${flagBase}ua.svg`, flagKey: 'flags.ua' },
     ru: { title: 'Русский', code: 'ru', flagSrc: `${flagBase}ru.svg`, flagKey: 'flags.ru' },
