@@ -30,8 +30,8 @@ const makeJsScriptTag = (jsUrl) => `<script type="module" src="${jsUrl}"></scrip
 
 function getAssetNames(assetFilenames) {
     return {
-        js: assetFilenames.find((f) => f.endsWith('.js')),
-        css: assetFilenames.find((f) => f.endsWith('.css')),
+        js: assetFilenames.find((f) => f.startsWith('index') && f.endsWith('.js')),
+        css: assetFilenames.find((f) => f.startsWith('index') && f.endsWith('.css')),
     };
 }
 
