@@ -1,45 +1,53 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-* {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-}
+@custom-variant dark (&:where(.dark, .dark *));
 
+/*
+ * All color tokens are defined once using light-dark().
+ * Switching to dark mode only requires setting color-scheme: dark -
+ * the browser resolves light-dark() automatically.
+ */
 :root {
-	/* Light Theme Colors */
-	--color-background: #ffffff;
-	--color-text: #1f2937; /* Gray 900 */
-	--color-primary: #4f46e5; /* Indigo 500 */
-	--color-primary-hover: #4338ca; /* Indigo 600 */
-	--color-secondary: #e5e7eb; /* Gray 100 */
-	--color-border: #d1d5db; /* Gray 300 */
-	--color-remove: #ef4444; /* Red 500 */
-	--color-remove-hover: #dc2626; /* Red 600 */
+    color-scheme: light;
+    --background: light-dark(#ffffff, #1f2937);
+    --foreground: light-dark(#1f2937, #f9fafb);
+    --primary: light-dark(#4f46e5, #6366f1);
+    --primary-hover: light-dark(#4338ca, #4f46e5);
+    --secondary: light-dark(#e5e7eb, #374151);
+    --secondary-2: light-dark(#f3f4f6, #4b5563);
+    --surface: light-dark(#f3f4f6, #111827);
+    --muted: light-dark(#6b7280, #9ca3af);
+    --border: light-dark(#d1d5db, #4b5563);
+    --danger: light-dark(#ef4444, #f87171);
+    --danger-hover: light-dark(#dc2626, #fca5a5);
+    --warning: light-dark(#eab308, #facc15);
+    --success: light-dark(#16a34a, #4ade80);
 }
 
+/* Explicit dark mode toggled by the theme switcher */
+.dark {
+    color-scheme: dark;
+}
+
+/* Honour the OS dark-mode preference when no explicit theme class is set */
 @media (prefers-color-scheme: dark) {
-	:root {
-		/* Dark Theme Colors */
-		--color-background: #1f2937; /* Gray 800 */
-		--color-text: #f9fafb; /* White */
-		--color-primary: #6366f1; /* Indigo 500 */
-		--color-primary-hover: #4f46e5; /* Indigo 600 */
-		--color-secondary: #374151; /* Gray 700 */
-		--color-border: #4b5563; /* Gray 600 */
-		--color-remove: #f87171; /* Red 400 */
-		--color-remove-hover: #f87171; /* Red 300 */
-	}
+    :root:not(.dark):not(.light) {
+        color-scheme: dark;
+    }
 }
 
-/* body | bg-gray-50   dark:bg-gray-900  text-gray-900 dark:text-gray-100 */
-/* list | bg-gray-200  dark:bg-gray-800                                   hover:bg-gray-300 dark:hover:bg-gray-700 */
-/* task | bg-white     dark:bg-gray-800 */
-/* text-secondary | text-gray-900 dark:text-white" */
-/* task-text | text-gray-900 dark:text-white" */
-
-.dragging {
-	opacity: 0.5;
+@theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-primary: var(--primary);
+    --color-primary-hover: var(--primary-hover);
+    --color-secondary: var(--secondary);
+    --color-secondary-2: var(--secondary-2);
+    --color-surface: var(--surface);
+    --color-muted: var(--muted);
+    --color-border: var(--border);
+    --color-danger: var(--danger);
+    --color-danger-hover: var(--danger-hover);
+    --color-warning: var(--warning);
+    --color-success: var(--success);
 }

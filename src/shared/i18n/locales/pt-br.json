@@ -1,0 +1,74 @@
+{
+    "actions": {
+        "add": "Adicionar",
+        "edit": "Editar",
+        "remove": "Remover",
+        "update": "Atualizar",
+        "close": "Fechar",
+        "cancel": "Cancelar"
+    },
+    "flags": {
+        "en": "Bandeira do Reino Unido",
+        "br": "Bandeira do Brasil",
+        "es": "Bandeira da Espanha",
+        "ua": "Bandeira da Ucrânia",
+        "ru": "Bandeira da Rússia"
+    },
+    "theme": {
+        "switchToLight": "Mudar para o tema claro",
+        "switchToDark": "Mudar para o tema escuro",
+        "light": "Tema claro",
+        "dark": "Tema escuro"
+    },
+    "none": "Nenhum",
+    "appTitle": "TodoList App",
+    "loading": "Carregando…",
+    "dbError": "Falha ao carregar os dados. Por favor, recarregue a página.",
+    "toggleTheme": "Alternar tema",
+    "lists": {
+        "lists": "Listas",
+        "new": "Nova Lista",
+        "edit": "Editar Lista",
+        "inputPlaceholder": "Nova Lista...",
+        "noLists": "Nenhuma lista criada ainda",
+        "noListSelected": "Nenhuma lista selecionada",
+        "select": "Selecionar lista"
+    },
+    "tasks": {
+        "tasks": "Tarefas",
+        "new": "Nova Tarefa",
+        "edit": "Editar tarefa",
+        "inputPlaceholder": "Nova Tarefa...",
+        "priority": {
+            "label": "Prioridade",
+            "high": "Alta",
+            "medium": "Média",
+            "low": "Baixa",
+            "none": "Nenhuma"
+        },
+        "createdAt": "Criado em",
+        "completedAt": "Concluído em",
+        "estimateTime": "Tempo estimado",
+        "left": "tarefas restantes",
+        "noTasks": "Nenhuma tarefa criada ainda",
+        "filter": {
+            "all": "Todas",
+            "active": "Ativas",
+            "completed": "Concluídas"
+        },
+        "clearCompleted": "Limpar concluídas",
+        "completeAll": "Completar tudo",
+        "urgent": "Urgente",
+        "status": {
+            "active": "Ativa",
+            "completed": "Completa",
+            "toggle": "Alternar conclusão para"
+        }
+    },
+    "units": {
+        "minutes": "Minutos",
+        "hours": "Horas",
+        "days": "Dias",
+        "weeks": "Semanas"
+    }
+}

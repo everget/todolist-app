@@ -1,0 +1,74 @@
+{
+    "actions": {
+        "add": "Añadir",
+        "edit": "Editar",
+        "remove": "Eliminar",
+        "update": "Actualizar",
+        "close": "Cerrar",
+        "cancel": "Cancelar"
+    },
+    "flags": {
+        "en": "Bandera del Reino Unido",
+        "br": "Bandera de Brasil",
+        "es": "Bandera de España",
+        "ua": "Bandera de Ucrania",
+        "ru": "Bandera de Rusia"
+    },
+    "theme": {
+        "switchToLight": "Cambiar al tema claro",
+        "switchToDark": "Cambiar al tema oscuro",
+        "light": "Tema claro",
+        "dark": "Tema oscuro"
+    },
+    "none": "Ninguno",
+    "appTitle": "TodoList App",
+    "loading": "Cargando…",
+    "dbError": "Error al cargar los datos. Por favor, recarga la página.",
+    "toggleTheme": "Alternar tema",
+    "lists": {
+        "lists": "Listas",
+        "new": "Nueva Lista",
+        "edit": "Editar Lista",
+        "inputPlaceholder": "Nueva Lista...",
+        "noLists": "No se han creado listas aún",
+        "noListSelected": "Ninguna lista seleccionada",
+        "select": "Seleccionar lista"
+    },
+    "tasks": {
+        "tasks": "Tareas",
+        "new": "Nueva Tarea",
+        "edit": "Editar tarea",
+        "inputPlaceholder": "Nueva Tarea...",
+        "priority": {
+            "label": "Prioridad",
+            "high": "Alta",
+            "medium": "Media",
+            "low": "Baja",
+            "none": "Ninguna"
+        },
+        "createdAt": "Creado el",
+        "completedAt": "Completado el",
+        "estimateTime": "Tiempo estimado",
+        "left": "tareas restantes",
+        "noTasks": "No se han creado tareas aún",
+        "filter": {
+            "all": "Todas",
+            "active": "Activas",
+            "completed": "Completadas"
+        },
+        "clearCompleted": "Limpar completadas",
+        "completeAll": "Completar todo",
+        "urgent": "Urgente",
+        "status": {
+            "active": "Activa",
+            "completed": "Completada",
+            "toggle": "Alternar completado para"
+        }
+    },
+    "units": {
+        "minutes": "Minutos",
+        "hours": "Horas",
+        "days": "Días",
+        "weeks": "Semanas"
+    }
+}

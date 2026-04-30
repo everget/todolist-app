@@ -1,0 +1,74 @@
+{
+    "actions": {
+        "add": "Add",
+        "edit": "Edit",
+        "remove": "Remove",
+        "update": "Update",
+        "close": "Close",
+        "cancel": "Cancel"
+    },
+    "flags": {
+        "en": "Flag of the United Kingdom",
+        "br": "Flag of Brazil",
+        "es": "Flag of Spain",
+        "ua": "Flag of Ukraine",
+        "ru": "Flag of Russia"
+    },
+    "theme": {
+        "switchToLight": "Switch to light theme",
+        "switchToDark": "Switch to dark theme",
+        "light": "Light theme",
+        "dark": "Dark theme"
+    },
+    "none": "None",
+    "appTitle": "TodoList App",
+    "loading": "Loading…",
+    "dbError": "Failed to load data. Please reload the page.",
+    "toggleTheme": "Toggle theme",
+    "lists": {
+        "lists": "Lists",
+        "new": "New List",
+        "edit": "Edit List",
+        "inputPlaceholder": "New List...",
+        "noLists": "No lists are created yet",
+        "noListSelected": "No list selected",
+        "select": "Select list"
+    },
+    "tasks": {
+        "tasks": "Tasks",
+        "new": "New Task",
+        "edit": "Edit task",
+        "inputPlaceholder": "New Task...",
+        "priority": {
+            "label": "Priority",
+            "high": "High",
+            "medium": "Medium",
+            "low": "Low",
+            "none": "None"
+        },
+        "createdAt": "Created at",
+        "completedAt": "Completed at",
+        "estimateTime": "Estimate time",
+        "left": "tasks left",
+        "noTasks": "No tasks are created yet",
+        "filter": {
+            "all": "All",
+            "active": "Active",
+            "completed": "Completed"
+        },
+        "clearCompleted": "Clear completed",
+        "completeAll": "Complete all",
+        "urgent": "Urgent",
+        "status": {
+            "active": "Active",
+            "completed": "Completed",
+            "toggle": "Toggle completion for"
+        }
+    },
+    "units": {
+        "minutes": "Minutes",
+        "hours": "Hours",
+        "days": "Days",
+        "weeks": "Weeks"
+    }
+}

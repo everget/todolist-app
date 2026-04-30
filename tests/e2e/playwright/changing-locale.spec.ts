@@ -1,107 +1,115 @@
-import test, { expect } from '@playwright/test';
-import { selector } from '../../../src/lib/dom';
-import { selectLocale } from './helpers';
+import { test, expect } from '@playwright/test';
+import { getFilterButton, resetApp, selectLocale } from './helpers';
 
 test.describe('Locale', () => {
-	test.beforeEach(async ({ page }) => {
-		await page.goto('/');
-		await page.evaluate(() => localStorage.clear());
-	});
+    test.beforeEach(async ({ page }) => {
+        await page.goto('/');
+        await resetApp(page);
+    });
 
-	test('English', async ({ page }) => {
-		// selectLocale(page, 'en');
-		await expect(page.locator(selector('add-list-button'))).toHaveText('Add');
-		await expect(page.locator(selector('add-task-button'))).toHaveText('Add');
-		await expect(page.locator(selector('task-filter-status-all'))).toHaveText('All (0)');
-		await expect(page.locator(selector('task-filter-status-active'))).toHaveText('Active (0)');
-		await expect(page.locator(selector('task-filter-status-completed'))).toHaveText(
-			'Completed (0)'
-		);
-	});
+    test('English', async ({ page }) => {
+        await expect(
+            page.getByTestId('lists-panel').getByRole('button', { name: 'Add' })
+        ).toBeVisible();
+        await expect(
+            page.getByTestId('tasks-panel').getByRole('button', { name: 'Add' })
+        ).toBeVisible();
+        await expect(getFilterButton(page, /^All/)).toHaveText('All (0)');
+        await expect(getFilterButton(page, /^Active/)).toHaveText('Active (0)');
+        await expect(getFilterButton(page, /^Completed/)).toHaveText('Completed (0)');
+    });
 
-	test('Spanish', async ({ page }) => {
-		selectLocale(page, 'es');
-		await expect(page.locator(selector('add-list-button'))).toHaveText('Añadir');
-		await expect(page.locator(selector('add-task-button'))).toHaveText('Añadir');
-		await expect(page.locator(selector('task-filter-status-all'))).toHaveText('Todas (0)');
-		await expect(page.locator(selector('task-filter-status-active'))).toHaveText('Activas (0)');
-		await expect(page.locator(selector('task-filter-status-completed'))).toHaveText(
-			'Completadas (0)'
-		);
-	});
+    test('Spanish', async ({ page }) => {
+        await selectLocale(page, 'es');
+        await expect(
+            page.getByTestId('lists-panel').getByRole('button', { name: 'Añadir' })
+        ).toBeVisible();
+        await expect(
+            page.getByTestId('tasks-panel').getByRole('button', { name: 'Añadir' })
+        ).toBeVisible();
+        await expect(getFilterButton(page, /^Todas/)).toHaveText('Todas (0)');
+        await expect(getFilterButton(page, /^Activas/)).toHaveText('Activas (0)');
+        await expect(getFilterButton(page, /^Completadas/)).toHaveText('Completadas (0)');
+    });
 
-	test('Brazilian Portuguese', async ({ page }) => {
-		selectLocale(page, 'pt-br');
-		await expect(page.locator(selector('add-list-button'))).toHaveText('Adicionar');
-		await expect(page.locator(selector('add-task-button'))).toHaveText('Adicionar');
-		await expect(page.locator(selector('task-filter-status-all'))).toHaveText('Todas (0)');
-		await expect(page.locator(selector('task-filter-status-active'))).toHaveText('Ativas (0)');
-		await expect(page.locator(selector('task-filter-status-completed'))).toHaveText(
-			'Concluídas (0)'
-		);
-	});
+    test('Brazilian Portuguese', async ({ page }) => {
+        await selectLocale(page, 'pt-br');
+        await expect(
+            page.getByTestId('lists-panel').getByRole('button', { name: 'Adicionar' })
+        ).toBeVisible();
+        await expect(
+            page.getByTestId('tasks-panel').getByRole('button', { name: 'Adicionar' })
+        ).toBeVisible();
+        await expect(getFilterButton(page, /^Todas/)).toHaveText('Todas (0)');
+        await expect(getFilterButton(page, /^Ativas/)).toHaveText('Ativas (0)');
+        await expect(getFilterButton(page, /^Concluídas/)).toHaveText('Concluídas (0)');
+    });
 
-	test('Russian', async ({ page }) => {
-		selectLocale(page, 'ru');
-		await expect(page.locator(selector('add-list-button'))).toHaveText('Добавить');
-		await expect(page.locator(selector('add-task-button'))).toHaveText('Добавить');
-		await expect(page.locator(selector('task-filter-status-all'))).toHaveText('Все (0)');
-		await expect(page.locator(selector('task-filter-status-active'))).toHaveText(
-			'Активные (0)'
-		);
-		await expect(page.locator(selector('task-filter-status-completed'))).toHaveText(
-			'Выполненные (0)'
-		);
-	});
+    test('Russian', async ({ page }) => {
+        await selectLocale(page, 'ru');
+        await expect(
+            page.getByTestId('lists-panel').getByRole('button', { name: 'Добавить' })
+        ).toBeVisible();
+        await expect(
+            page.getByTestId('tasks-panel').getByRole('button', { name: 'Добавить' })
+        ).toBeVisible();
+        await expect(getFilterButton(page, /^Все/)).toHaveText('Все (0)');
+        await expect(getFilterButton(page, /^Активные/)).toHaveText('Активные (0)');
+        await expect(getFilterButton(page, /^Завершенные/)).toHaveText('Завершенные (0)');
+    });
 
-	test('Ukrainian', async ({ page }) => {
-		selectLocale(page, 'ua');
-		await expect(page.locator(selector('add-list-button'))).toHaveText('Додати');
-		await expect(page.locator(selector('add-task-button'))).toHaveText('Додати');
-		await expect(page.locator(selector('task-filter-status-all'))).toHaveText('Усі (0)');
-		await expect(page.locator(selector('task-filter-status-active'))).toHaveText('Активні (0)');
-		await expect(page.locator(selector('task-filter-status-completed'))).toHaveText(
-			'Виконані (0)'
-		);
-	});
+    test('Ukrainian', async ({ page }) => {
+        await selectLocale(page, 'ua');
+        await expect(
+            page.getByTestId('lists-panel').getByRole('button', { name: 'Додати' })
+        ).toBeVisible();
+        await expect(
+            page.getByTestId('tasks-panel').getByRole('button', { name: 'Додати' })
+        ).toBeVisible();
+        await expect(getFilterButton(page, /^Всі/)).toHaveText('Всі (0)');
+        await expect(getFilterButton(page, /^Активні/)).toHaveText('Активні (0)');
+        await expect(getFilterButton(page, /^Завершені/)).toHaveText('Завершені (0)');
+    });
 
-	test('Switching between locales', async ({ page }) => {
-		// Select Spanish
-		selectLocale(page, 'es');
+    test('Switching between locales', async ({ page }) => {
+        await selectLocale(page, 'es');
 
-		await expect(page.locator(selector('add-list-button'))).toHaveText('Añadir');
-		await expect(page.locator(selector('add-task-button'))).toHaveText('Añadir');
+        await expect(
+            page.getByTestId('lists-panel').getByRole('button', { name: 'Añadir' })
+        ).toBeVisible();
+        await expect(
+            page.getByTestId('tasks-panel').getByRole('button', { name: 'Añadir' })
+        ).toBeVisible();
+        await expect(getFilterButton(page, /^Todas/)).toHaveText('Todas (0)');
+        await expect(getFilterButton(page, /^Completadas/)).toHaveText('Completadas (0)');
+        await expect(getFilterButton(page, /^Activas/)).toHaveText('Activas (0)');
 
-		// Verify filters are in Spanish
-		await expect(page.locator(selector('task-filter-status-all'))).toHaveText('Todas (0)');
-		await expect(page.locator(selector('task-filter-status-completed'))).toHaveText(
-			'Completadas (0)'
-		);
-		await expect(page.locator(selector('task-filter-status-active'))).toHaveText('Activas (0)');
+        await selectLocale(page, 'en');
 
-		// Switch back to English and verify
-		selectLocale(page, 'en');
+        await expect(getFilterButton(page, /^All/)).toHaveText('All (0)');
+        await expect(getFilterButton(page, /^Completed/)).toHaveText('Completed (0)');
+        await expect(getFilterButton(page, /^Active/)).toHaveText('Active (0)');
+        await expect(
+            page.getByTestId('lists-panel').getByRole('button', { name: 'Add' })
+        ).toBeVisible();
+        await expect(
+            page.getByTestId('tasks-panel').getByRole('button', { name: 'Add' })
+        ).toBeVisible();
+    });
 
-		await expect(page.locator(selector('task-filter-status-all'))).toHaveText('All (0)');
-		await expect(page.locator(selector('task-filter-status-completed'))).toHaveText(
-			'Completed (0)'
-		);
-		await expect(page.locator(selector('task-filter-status-active'))).toHaveText('Active (0)');
-		await expect(page.locator(selector('add-list-button'))).toHaveText('Add');
-		await expect(page.locator(selector('add-task-button'))).toHaveText('Add');
-	});
+    test('Maintains language preference across page reloads', async ({ page }) => {
+        await selectLocale(page, 'es');
+        await page.reload();
+        await page.waitForSelector('[data-testid="lists-panel"]');
 
-	test('Maintains language preference across page reloads', async ({ page }) => {
-		selectLocale(page, 'es');
-
-		await page.reload();
-
-		await expect(page.locator(selector('add-list-button'))).toHaveText('Añadir');
-		await expect(page.locator(selector('add-task-button'))).toHaveText('Añadir');
-		await expect(page.locator(selector('task-filter-status-all'))).toHaveText('Todas (0)');
-		await expect(page.locator(selector('task-filter-status-active'))).toHaveText('Activas (0)');
-		await expect(page.locator(selector('task-filter-status-completed'))).toHaveText(
-			'Completadas (0)'
-		);
-	});
+        await expect(
+            page.getByTestId('lists-panel').getByRole('button', { name: 'Añadir' })
+        ).toBeVisible();
+        await expect(
+            page.getByTestId('tasks-panel').getByRole('button', { name: 'Añadir' })
+        ).toBeVisible();
+        await expect(getFilterButton(page, /^Todas/)).toHaveText('Todas (0)');
+        await expect(getFilterButton(page, /^Activas/)).toHaveText('Activas (0)');
+        await expect(getFilterButton(page, /^Completadas/)).toHaveText('Completadas (0)');
+    });
 });
