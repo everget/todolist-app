@@ -1,5 +1,5 @@
-# Todo List App
+# TodoList App
 
-My old Vanilla Todolist app rewritten to the modern Web tech stack
+My old Vanilla TodoList App rewritten to the modern Web tech stack
 
 [Live](https://everget.github.io/todolist-app/)

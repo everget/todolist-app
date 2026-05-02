@@ -9,6 +9,7 @@ export default defineConfig(({ mode }) => {
     const port = Number(env.VITE_DEV_PORT) || 5174;
 
     return {
+        base: '/todolist-app/',
         plugins: [react(), tailwindcss()],
         resolve: {
             alias: {
