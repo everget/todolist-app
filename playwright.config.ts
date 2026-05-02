@@ -13,9 +13,9 @@ const PLAYWRIGHT_DIR = './tests/e2e/playwright';
 
 // See https://playwright.dev/docs/test-configuration.
 export default defineConfig({
-    testDir: './tests/e2e/playwright',
+    testDir: PLAYWRIGHT_DIR,
     // Folder for test artifacts such as screenshots, videos, traces, etc.
-    outputDir: path.join(PLAYWRIGHT_DIR, 'test-results'), //'./tests/e2e/playwright/test-results',
+    outputDir: path.join(PLAYWRIGHT_DIR, 'test-results'),
 
     timeout: 15_000,
     // Run tests in files in parallel
@@ -41,12 +41,10 @@ export default defineConfig({
             name: 'chromium',
             use: { ...devices['Desktop Chrome'] },
         },
-
         // {
         // 	name: 'firefox',
         // 	use: { ...devices['Desktop Firefox'] },
         // },
-
         // {
         // 	name: 'webkit',
         // 	use: { ...devices['Desktop Safari'] },
@@ -78,6 +76,6 @@ export default defineConfig({
         command: 'pnpm run dev',
         url: FRONTEND_URL,
         reuseExistingServer: !process.env.CI,
-        timeout: 3e4,
+        timeout: 30_000,
     },
 });
