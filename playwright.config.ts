@@ -2,11 +2,11 @@ import { defineConfig, devices } from '@playwright/test';
 import path from 'path';
 
 try {
-	process.loadEnvFile();
+    process.loadEnvFile();
 } catch (err) {
-	if ((err as NodeJS.ErrnoException)?.code !== 'ENOENT') {
-		throw err;
-	}
+    if ((err as NodeJS.ErrnoException)?.code !== 'ENOENT') {
+        throw err;
+    }
 }
 
 const port = process.env.VITE_DEV_PORT ?? '5174';

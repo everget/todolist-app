@@ -6,7 +6,7 @@
     "scripts": {
         "preinstall": "npx only-allow pnpm",
         "// --- BUILDING ---": "",
-        "build": "pnpm run build:prebuild && tsc && vite build && pnpm run fix && pnpm run build:postbuild",
+        "build": "pnpm run build:prebuild && tsc && vite build && pnpm run build:postbuild",
         "build:prebuild": "pnpm run fix && pnpm run check && pnpm run test",
         "build:postbuild": "pnpm run fix",
         "dev": "vite",
